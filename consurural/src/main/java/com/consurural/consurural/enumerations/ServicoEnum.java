@@ -9,7 +9,7 @@ public enum ServicoEnum {
     PROJETOS_AGROPECUARIOS("Projetos Agropecuários"),
     TESTES_DE_EFICIENCIA_DE_IRRIGACAO("Testes de Eficiência de Irrigação");
 
-    private String descricao;
+    private final String descricao;
 
     ServicoEnum(String descricao){
         this.descricao = descricao;
