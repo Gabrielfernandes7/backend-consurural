@@ -12,6 +12,4 @@ public enum SubtipoConsultoriaEnum {
     private final String descricao;
 
     SubtipoConsultoriaEnum(String descricao) { this.descricao = descricao; }
-
-
 }

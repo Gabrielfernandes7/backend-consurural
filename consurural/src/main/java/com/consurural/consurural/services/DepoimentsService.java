@@ -21,7 +21,7 @@ public class DepoimentsService {
             return depoimentsRepository.save(depoiments);
         }
     }
-    //Read method:
+    
     public static List<Depoiments> returnDepoiments() {
         return depoimentsRepository.findAll();
     }

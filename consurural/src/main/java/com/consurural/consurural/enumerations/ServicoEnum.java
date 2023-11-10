@@ -14,5 +14,4 @@ public enum ServicoEnum {
     ServicoEnum(String descricao){
         this.descricao = descricao;
     }
-
 }
