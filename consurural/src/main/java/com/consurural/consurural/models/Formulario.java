@@ -15,6 +15,7 @@ public class Formulario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
     private String endereco;
     private String telefone;
@@ -22,7 +23,7 @@ public class Formulario {
 
     @Enumerated(EnumType.STRING)
     private ServicoEnum servicoSelecionado;
+    
     @Enumerated(EnumType.STRING)
     private SubtipoConsultoriaEnum subtipoSelecionado;
-
 }

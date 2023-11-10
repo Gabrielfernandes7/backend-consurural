@@ -6,9 +6,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ApplicationConfiguration {
-
-    //Esta metodo deve ler as linhas de configuração do arquivo: application_configuration.txt
-
     public static String retriveData(int linha) {
         ArrayList<String> list = new ArrayList<String>();
         try {
@@ -24,12 +21,12 @@ public class ApplicationConfiguration {
         }
 
         switch (linha) {
-            case 0: // Telefone principal
+            case 0:
                 return list.get(linha).replaceAll("telefone_principal=", "");
-            case 1: // Mensagem principal
+            case 1:
                 return list.get(linha).replaceAll("mensagem_principal=", "");
             default:
-                return "No found";
+                return "Not found";
         }
     }
 }

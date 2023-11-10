@@ -1,0 +1,15 @@
+# Indentação padrão de 4 espaços
+[*]
+indent_style = space
+indent_size = 4
+
+# Estilo de fim de linha padrão Unix (LF)
+[*.{java,xml,yml,properties}]
+end_of_line = lf
+charset = utf-8
+
+# Remover espaços em branco desnecessários
+trim_trailing_whitespace = true
+
+# Adicionar nova linha no final do arquivo
+insert_final_newline = true

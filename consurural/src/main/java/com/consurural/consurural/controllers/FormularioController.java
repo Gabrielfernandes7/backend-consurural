@@ -31,26 +31,46 @@ public class FormularioController {
     }
 
     @GetMapping("/private/contato")
-    //Essa função tem que receber os dados do formulario;
     public ResponseEntity<Void> redirect(Formulario formulario) {
-        String url = "";
-        if(formulario.getSubtipoSelecionado() != null) {
-            String dados = " Nome: " + formulario.getNome() + " Telefone: " + formulario.getTelefone() + " Endereço: " + formulario.getEndereco() + " Ramo de atividade: " + formulario.getRamoAtividade() + " Serviço selecioado: " + formulario.getServicoSelecionado().getDescricao() + " Consultoria: " + formulario.getSubtipoSelecionado().getDescricao();
-            String texto = ApplicationConfiguration.retriveData(1).replaceAll(" ", "+") + dados.replaceAll(" ","+");
-            url =
-                    "https://api.whatsapp.com/send?phone=+55" + ApplicationConfiguration.retriveData(0) + "&text=" + texto;
-        } else {
 
-            String dados = " Nome: " + formulario.getNome() + " Telefone: " + formulario.getTelefone() + " Endereço: " + formulario.getEndereco() + " Ramo de atividade: " + formulario.getRamoAtividade() + " Serviço selecioado: " + formulario.getServicoSelecionado().getDescricao();
-            String texto = ApplicationConfiguration.retriveData(1).replaceAll(" ", "+") + dados.replaceAll(" ","+");
+        String url = "";
+
+        if(formulario.getSubtipoSelecionado() != null) {
+            String dados =
+                " Nome: " + formulario.getNome() +
+                " Telefone: " + formulario.getTelefone() +
+                " Endereço: " + formulario.getEndereco() +
+                " Ramo de atividade: " + formulario.getRamoAtividade() +
+                " Serviço selecioado: " + formulario.getServicoSelecionado().getDescricao() +
+                " Consultoria: " + formulario.getSubtipoSelecionado().getDescricao();
+
+            String texto =
+                ApplicationConfiguration.retriveData(1).replaceAll(" ", "+") +
+                dados.replaceAll(" ","+");
+
             url =
-                    "https://api.whatsapp.com/send?phone=+55" + ApplicationConfiguration.retriveData(0) + "&text=" + texto;
+                "https://api.whatsapp.com/send?phone=+55" +
+                ApplicationConfiguration.retriveData(0) + "&text=" + texto;
+
+        } else {
+            String dados =
+                " Nome: " + formulario.getNome() +
+                " Telefone: " + formulario.getTelefone() +
+                " Endereço: " + formulario.getEndereco() +
+                " Ramo de atividade: " + formulario.getRamoAtividade() +
+                " Serviço selecioado: " + formulario.getServicoSelecionado().getDescricao();
+
+            String texto =
+                ApplicationConfiguration.retriveData(1).replaceAll(" ", "+") +
+                dados.replaceAll(" ","+");
+
+            url =
+                "https://api.whatsapp.com/send?phone=+55" +
+                ApplicationConfiguration.retriveData(0) + "&text=" + texto;
         }
 
         return ResponseEntity.status(HttpStatus.FOUND).location(URI.create(url)).build();
-
     }
-
 
     @GetMapping("/listar")
     public List<Formulario> listarFormularios(){
