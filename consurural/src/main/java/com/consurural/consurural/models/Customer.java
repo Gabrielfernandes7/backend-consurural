@@ -1,7 +1,7 @@
 package com.consurural.consurural.models;
 
-import com.consurural.consurural.enumerations.ServicoEnum;
-import com.consurural.consurural.enumerations.SubtipoConsultoriaEnum;
+import com.consurural.consurural.enumerations.ActivitiesEnum;
+import com.consurural.consurural.enumerations.ConsultanceEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Formulario {
+public class Customer {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,12 +29,12 @@ public class Formulario {
     @Column(name = "business_sector")
     private String business_sector;
 
-    @Column(name = "servicoSelecionado")
+    @Column(name = "activities")
     @Enumerated(EnumType.STRING)
-    private ServicoEnum servicoSelecionado;
+    private ActivitiesEnum activities;
 
-    @Column(name = "subtipoSelecionado")
+    @Column(name = "consultances")
     @Enumerated(EnumType.STRING)
-    private SubtipoConsultoriaEnum subtipoSelecionado;
-    
+    private ConsultanceEnum consultance;
+
 }
