@@ -16,14 +16,24 @@ public class Formulario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
-    private String endereco;
-    private String telefone;
-    private String ramoAtividade;
+    @Column(name = "name")
+    private String name;
 
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "phone_number")
+    private String phone_number;
+
+    @Column(name = "business_sector")
+    private String business_sector;
+
+    @Column(name = "servicoSelecionado")
     @Enumerated(EnumType.STRING)
     private ServicoEnum servicoSelecionado;
-    
+
+    @Column(name = "subtipoSelecionado")
     @Enumerated(EnumType.STRING)
     private SubtipoConsultoriaEnum subtipoSelecionado;
+    
 }

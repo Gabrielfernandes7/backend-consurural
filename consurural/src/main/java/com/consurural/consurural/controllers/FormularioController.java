@@ -14,11 +14,13 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/formulario")
+@RequestMapping("/formulario")
+@CrossOrigin(origins = "http://localhost:8080")
 public class FormularioController {
 
     @Autowired
     FormularioService formularioService;
+
     @Autowired
     FormularioRepository formularioRepository;
 
@@ -37,10 +39,10 @@ public class FormularioController {
 
         if(formulario.getSubtipoSelecionado() != null) {
             String dados =
-                " Nome: " + formulario.getNome() +
-                " Telefone: " + formulario.getTelefone() +
-                " Endereço: " + formulario.getEndereco() +
-                " Ramo de atividade: " + formulario.getRamoAtividade() +
+                " Nome: " + formulario.getName() +
+                " Telefone: " + formulario.getPhone_number() +
+                " Endereço: " + formulario.getAddress() +
+                " Ramo de atividade: " + formulario.getBusiness_sector() +
                 " Serviço selecioado: " + formulario.getServicoSelecionado().getDescricao() +
                 " Consultoria: " + formulario.getSubtipoSelecionado().getDescricao();
 
@@ -54,10 +56,10 @@ public class FormularioController {
 
         } else {
             String dados =
-                " Nome: " + formulario.getNome() +
-                " Telefone: " + formulario.getTelefone() +
-                " Endereço: " + formulario.getEndereco() +
-                " Ramo de atividade: " + formulario.getRamoAtividade() +
+                " Nome: " + formulario.getName() +
+                " Telefone: " + formulario.getPhone_number() +
+                " Endereço: " + formulario.getAddress() +
+                " Ramo de atividade: " + formulario.getBusiness_sector() +
                 " Serviço selecioado: " + formulario.getServicoSelecionado().getDescricao();
 
             String texto =
@@ -76,4 +78,5 @@ public class FormularioController {
     public List<Formulario> listarFormularios(){
         return formularioRepository.findAll();
     }
+
 }

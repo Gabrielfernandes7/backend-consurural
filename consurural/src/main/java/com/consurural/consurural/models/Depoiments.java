@@ -15,7 +15,7 @@ public class Depoiments {
 
     @Column(nullable = false)
     private String autor;
-    
+
     @Column(nullable = false)
     private String depoimento;
 
