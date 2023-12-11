@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ApplicationConfiguration {
-    public static String retriveData(int linha) {
+    public static String retriveData(int row) {
         ArrayList<String> list = new ArrayList<String>();
         try {
             File myObj = new File("application_configuration.txt");
@@ -20,13 +20,13 @@ public class ApplicationConfiguration {
             e.printStackTrace();
         }
 
-        switch (linha) {
+        switch (row) {
             case 0:
-                return list.get(linha).replaceAll("telefone_principal=", "");
+                return list.get(row).replaceAll("Telefone_principal=", "");
             case 1:
-                return list.get(linha).replaceAll("mensagem_principal=", "");
+                return list.get(row).replaceAll("Mensagem_principal=", "");
             default:
-                return "Not found";
+                return "Não encontrado";
         }
     }
 }
