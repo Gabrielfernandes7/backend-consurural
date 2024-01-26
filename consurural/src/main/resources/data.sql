@@ -1,0 +1,1 @@
+INSERT IGNORE INTO consultances (name, phone) VALUES ('alguém', '8599999999');
