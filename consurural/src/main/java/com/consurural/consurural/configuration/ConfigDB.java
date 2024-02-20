@@ -21,7 +21,7 @@ public class ConfigDB {
 
             Consultances consu = new Consultances();
             consu.setName("Alguma pessoa");
-            consu.setPhone("5585999999999");
+            consu.setPhone("5585985313082");
 
             if(repo.findAll().isEmpty()) {
                 repo.save(consu);
